@@ -4,7 +4,7 @@ TRAIN:
   BATCH_SIZE: 64
   EVAL_PERIOD: 1
   CHECKPOINT_PERIOD: 1
-  AUTO_RESUME: True
+  AUTO_RESUME: False
   # CHECKPOINT_FILE_PATH: path to pretrain model
   CHECKPOINT_TYPE: caffe2
 DATA:
@@ -20,7 +20,9 @@ DETECTION:
 AVA:
   BGR: False
   DETECTION_SCORE_THRESH: 0.9
-  TEST_PREDICT_BOX_LISTS: ["person_box_67091280_iou75/ava_detection_val_boxes_and_labels.csv"]
+  # TODO: Aniruddha
+  # TEST_PREDICT_BOX_LISTS: ["person_box_67091280_iou90/ava_detection_val_boxes_and_labels.csv"]
+  TEST_PREDICT_BOX_LISTS: ["ava_detection_val.csv"]
 RESNET:
   ZERO_INIT_FINAL_BN: True
   WIDTH_PER_GROUP: 64
@@ -52,11 +54,11 @@ MODEL:
 TEST:
   ENABLE: True
   DATASET: ava
-  BATCH_SIZE: 8
+  BATCH_SIZE: 4
 DATA_LOADER:
-  NUM_WORKERS: 2
+  NUM_WORKERS: 4
   PIN_MEMORY: True
-NUM_GPUS: 8
+NUM_GPUS: 4
 NUM_SHARDS: 1
 RNG_SEED: 0
 OUTPUT_DIR: .

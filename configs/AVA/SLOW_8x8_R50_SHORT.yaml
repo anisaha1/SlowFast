@@ -23,7 +23,9 @@ AVA:
     "ava_train_v2.2.csv",
     "person_box_67091280_iou90/ava_detection_train_boxes_and_labels_include_negative_v2.2.csv",
   ]
-  TEST_PREDICT_BOX_LISTS: ["person_box_67091280_iou90/ava_detection_val_boxes_and_labels.csv"]
+  # TODO: Aniruddha
+  # TEST_PREDICT_BOX_LISTS: ["person_box_67091280_iou90/ava_detection_val_boxes_and_labels.csv"]
+  TEST_PREDICT_BOX_LISTS: ["ava_detection_val.csv"]
 RESNET:
   ZERO_INIT_FINAL_BN: True
   WIDTH_PER_GROUP: 64
